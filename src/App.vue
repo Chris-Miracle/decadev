@@ -10,8 +10,7 @@
     </div>
     <div class="col-md-6">
       <div class="split right">
-        <h1>Hello, <strong> Chris</strong></h1>
-        <HelloWorld msg="Welcome to your dashboard, kindly sort the user base."/>
+        <SortUser/>
       </div>
     </div>
   </div>
@@ -19,11 +18,13 @@
 
 <script>
 import Welcome from './components/Welcome.vue'
+import SortUser from './components/SortUser.vue'
 
 export default {
   name: 'App',
   components: {
-    Welcome
+    Welcome,
+    SortUser
   }
 }
 </script>
@@ -36,7 +37,8 @@ html, body{
     width : 100%;
     height: 100%;
     overflow-x: hidden;
-    background-color: #2c3e50;
+    background-color: #02092b;
+    height: 100vh;
 }
 
 .split {
@@ -50,11 +52,13 @@ html, body{
   left: 0;
   text-align: left;
   padding: 120px;
-  margin-top: 160px;
+  margin-top: 70px;
+  width: 50%;
 }
 
 .right{
   right: 0;
+  margin-right: 10px;
 }
 
 h1{

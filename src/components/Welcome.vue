@@ -1,15 +1,19 @@
 <template>
   <div class="hello">
-    {{ msg }}
+    <p class="msg">{{ msg }}</p>
   </div>
   <div class="search-panel">
-    
+    <FormSearch/>
   </div>
 </template>
 
 <script>
+import FormSearch from './FormSearch.vue'
 export default {
   name: 'Welcome',
+  components:{
+    FormSearch
+  },
   props: {
     msg: String
   }
@@ -22,4 +26,7 @@ export default {
   color: #ffffff;
 }
 
+.msg{
+  margin-bottom: 40px;
+}
 </style>
