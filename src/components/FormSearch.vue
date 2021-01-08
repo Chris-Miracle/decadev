@@ -23,7 +23,7 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Lato:100,300,400');
     .search{
     height: 40px;
-    width: 50%;
+    width: 60%;
     border: none;
     border-radius: 1.2rem;
     padding: 10px;

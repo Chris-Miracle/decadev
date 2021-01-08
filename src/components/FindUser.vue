@@ -24,7 +24,7 @@ export default {
 	display: grid;
 	width: 50%;
 	grid-template-columns: repeat(3, 1fr);
-	grid-gap: 1em;
+	grid-gap: 2.5em;
 	padding-top: 20px;
 }
 
