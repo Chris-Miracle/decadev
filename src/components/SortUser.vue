@@ -29,13 +29,29 @@
                     </div>
                 </div>
             </div>
+            <Users/>
+            <div class="container-2">
+                <div class="dowload">
+                    <div class="button-purple"><i class="fas fa-download"></i> Download Results</div>
+                </div>
+                <div class="paginate">
+                    <div class="button-gray"><i class="fas fa-chevron-left"></i></div>
+                    <div class="button-black"><i class="fas fa-chevron-right"></i></div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
+import Users from './Users.vue'
+
 export default {
     name: 'SortUser',
+    components: 
+    {
+        Users
+    }
 }
 </script>
 
@@ -51,7 +67,9 @@ export default {
 }
 
 .box{
+    margin-top: 0;
     padding: 40px;
+    padding-left: 65px;
     text-align: left;
     /* padding-left: 30px; */
 }
@@ -74,7 +92,7 @@ h1{
     border: none;
     border-radius: 1.2rem;
     padding: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     background-color: rgba(77, 70, 59, 0.13);
     /* opacity: 0.1; */
     /* border: 1px solid #e6e6e6; */
@@ -153,7 +171,7 @@ input[type="checkbox"].switch{
 }
 
 input[type="checkbox"].switch:checked{
-    background: #087441;
+    background: #6ebe99;
 }
 
 input[type="checkbox"].switch:after{
@@ -171,6 +189,57 @@ input[type="checkbox"].switch:after{
 
 input[type="checkbox"].switch:checked:after{
     left: calc(100% - 1.5em);
+}
+
+.container-2{
+	display: grid;
+	width: 100%;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 18.5em;
+    justify-content: space-between;
+}
+
+.button-purple{
+	padding: 15px;
+	text-align: center;
+	cursor: pointer;
+	background-color: #02092b;
+	color: white;
+	font-size: 1em;
+	border-radius: 20px;
+	transition: .3s;
+    width: 100%;
+}
+
+.paginate{
+	display: flex;
+	/* width: 50%; */
+    /* margin-top: 20px; */
+    /* justify-content: left; */
+}
+
+.button-gray{
+	padding: 10px;
+	text-align: center;
+	cursor: pointer;
+	background-color: rgb(218, 210, 210);
+	color: #000;
+	font-size: 1em;
+	border-radius: 7px;
+    width: 30px;
+    margin: 3px;
+}
+
+.button-black{
+	padding: 10px;
+	text-align: center;
+	cursor: pointer;
+	background-color: rgb(19, 18, 18);
+	color: rgb(243, 239, 239);
+	font-size: 1em;
+	border-radius: 7px;
+    width: 30px;
+    margin: 3px;
 }
 
 </style>

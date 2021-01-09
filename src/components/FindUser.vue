@@ -32,7 +32,7 @@ export default {
 	padding: 18px;
 	text-align: center;
 	cursor: pointer;
-	background-color: rgb(102, 219, 102);
+	background-color: #6ebe99;
 	color: white;
 	font-size: 3em;
 	border-radius: 15px;
@@ -56,7 +56,7 @@ export default {
     padding: 18px;
 	text-align: center;
 	cursor: pointer;
-	background-color: rgb(187, 41, 187);
+	background-color: purple;
 	color: white;
 	font-size: 3em;
 	border-radius: 15px;
