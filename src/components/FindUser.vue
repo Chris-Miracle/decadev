@@ -3,15 +3,22 @@
         <p class="show-user">Show Users</p>
     </div>
     <div class="container">
-        <div class="button-pink "><i class="fas fa-users"></i></div>
-        <div class="button-green"><i class="fas fa-male"></i></div>
-        <div class="button-purple"><i class="fas fa-female"></i></div>
+        <div v-on:click="Allusers = !Allusers" class="button-pink "><i class="fas fa-users"></i></div>
+        <div v-on:click="Maleusers = !Maleusers" class="button-green"><i class="fas fa-male"></i></div>
+        <div v-on:click="Femaleusers = !Femaleusers" class="button-purple"><i class="fas fa-female"></i></div>
     </div>  
 </template>
 
 <script>
 export default {
     name: 'FindUser',
+	// data(){
+    //     return{
+    //         Allusers: false,
+	// 		Maleusers: false,
+	// 		Femaleusers: false
+    //     }
+    // },
 }
 </script>
 

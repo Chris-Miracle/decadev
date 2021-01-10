@@ -5,17 +5,17 @@
         </a>
         <input  class="search-txt" type="text" name="" placeholder="Find a user">
     </div>
-    <FindUser/>
+    <!-- <FindUser/> -->
 </template>
 
 <script>
-import FindUser from './FindUser.vue';
+// import FindUser from './FindUser.vue';
 
 export default {
     name: 'FormSearch',
-    components: {
-        FindUser,
-    },
+    // components: {
+    //     FindUser,
+    // },
 }
 </script>
 
