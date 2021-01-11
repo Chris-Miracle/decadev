@@ -11,7 +11,7 @@
           <div class="container">
               <div v-on:click="users()" class="button-pink "><i class="fas fa-users"></i></div>
               <div v-on:click="male()" class="button-green"><i class="fas fa-male"></i></div>
-              <div v-on:click="female()" class="button-purple"><i class="fas fa-female"></i></div>
+              <div v-on:click="female()" class="button-purple-x"><i class="fas fa-female"></i></div>
           </div>
         </div>
       </div>
@@ -146,7 +146,7 @@ h1{
     width: 70px;
 }
 
-.button-purple{
+.button-purple-x{
     padding: 18px;
 	text-align: center;
 	cursor: pointer;
@@ -171,7 +171,7 @@ h1{
 		color: #fff;
 	}
 
-    .button-purple:hover {
+    .button-purple-x:hover {
 		/* box-shadow: 10px 10px 10px fuchsia; */
 		transform: scale(1.09);
 		background-color: rgb(187, 41, 187);

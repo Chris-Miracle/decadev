@@ -1,7 +1,9 @@
 <template>
     <div class="sortuser-box">
         <div class="box">
-            <h1>All Users</h1>
+            <transition enter-active-class="animate__rubberBand">
+                <h1>All Users</h1>
+            </transition>
             <p>Filter by</p>
             <div class="container">
                 <div class="search-box">
@@ -28,22 +30,22 @@
             </div>
             <!--  -->
             <div v-show="User_Roll" class="wrapper">
-                <div class="container-2">
-                    <div class="image"><img src="@/assets/check.jpg" ></div>
+                <div class="container-2" v-for="user in users" :key="user.id">
+                    <div class="image"><img v-bind:src="user.picture.large" ></div>
                     <div class="info">
-                        <h3>Chris Miracle</h3>
-                        <i><p>No 5 Okoro Street Off 57 Immaculate.</p></i>
+                        <h3>{{user.name.first}} {{user.name.last}}</h3>
+                        <i><p>{{user.location.street.number}}, {{user.location.city}}, {{user.location.state}}.</p></i>
                     <div class="container-3">
                             <div class="email">
                                     <span><i class="fas fa-envelope" aria-hidden="true"></i></span>
                                     <div class="content">
-                                        <small>chrisstarkmira15@gmail.com</small>
+                                        <small>{{user.email}}</small>
                                     </div>
                                 </div>
                                 <div class="phone">
                                     <span><i class="fas fa-phone-volume"></i></span>
                                     <div class="content">
-                                        <small> 0903857937</small>
+                                        <small>09094839396</small>
                                     </div>
                                 </div>
                             </div>
@@ -52,35 +54,9 @@
                         <div v-on:click="User_Roll = !User_Roll" class="button-green-user"><i class="fas fa-arrow-right"></i></div>
                     </div>
                 </div>
-                <div class="container-2">
-                    <div class="image"><img src="@/assets/check.jpg" ></div>
-                    <div class="info">
-                        <h3>Ibe Chidnma</h3>
-                        <i><p>No 9 Okoro Street Off 57 Immaculate.</p></i>
-                    <!-- <div class="row"> -->
-                    <div class="container-3">
-                            <div class="email">
-                                    <span><i class="fas fa-envelope" aria-hidden="true"></i></span>
-                                    <div class="content">
-                                        <small>chrisstarkmira15@gmail.com</small>
-                                    </div>
-                                </div>
-                                <div class="phone">
-                                    <span><i class="fas fa-phone-volume"></i></span>
-                                    <div class="content">
-                                        <small> 0903857937</small>
-                                    </div>
-                                </div>
-                            </div>
-                    <!-- </div> -->
-                    </div>
-                    <div class="show-user">
-                        <div class="button-green-user"><i class="fas fa-arrow-right"></i></div>
-                    </div>
-                </div>
             </div>
             <div v-show="!User_Roll">
-                <ShowUser/>
+                <ShowUser enter-active-class="animate__fadeInUp"/>
             </div>
             <div class="container-4">
                 <div class="dowload">
@@ -97,6 +73,7 @@
 
 <script>
 import ShowUser from '../ShowUser.vue';
+import axios from 'axios';
 
 export default {
     name: 'Users',
@@ -113,8 +90,14 @@ export default {
     data(){
         return{
             User_Roll: true,
+            users: [],
         }
     },
+    mounted(){
+            axios.get('https://randomuser.me/api/1.3/?results=3&gender=female')
+            .then(res => this.users = res.data.results)
+            // .catch(error = console.log(error));
+        }
 }
 </script>
 
@@ -126,7 +109,7 @@ export default {
     width: 100%;
     height: 740px;
     border-radius: 30px;
-    margin-top: 10px;
+    margin-top: 0px;
 }
 
 .box{
@@ -134,6 +117,7 @@ export default {
     padding: 40px;
     padding-left: 65px;
     text-align: left;
+    width: 100%;
     /* padding-left: 30px; */
 }
 
@@ -309,12 +293,13 @@ h3{
     margin: 0px;
 }
 
+
 .info p{
     margin-top: 10px;
 }
 
 .wrapper{
-    margin: 40px;
+    margin: 25px;
 }
 
 .container-2{
@@ -344,6 +329,10 @@ img{
     color: gray;
     font-size: 16px;
     font-weight: lighter;
+}
+
+.phone{
+    display: flex;
 }
 
 .row{
