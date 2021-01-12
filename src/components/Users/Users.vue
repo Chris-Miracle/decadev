@@ -1,8 +1,8 @@
 <template>
     <div class="sortuser-box">
         <div class="box">
-            <transition enter-active-class="animate__rubberBand">
-                <h1>All Users</h1>
+            <transition enter-active-class="animate__animated animate__fadeIn">
+                <h1 class="animate__animated animate__fadeIn">All Users</h1>
             </transition>
             <p>Filter by</p>
             <div class="container">
@@ -30,7 +30,7 @@
             </div>
             <!--  -->
             <div v-show="User_Roll" class="wrapper">
-                <div class="container-2" v-for="user in users" :key="user.id">
+                <div class="container-2 animate__animated animate__fadeInDown" v-for="user in users" :key="user.id">
                     <div class="image"><img v-bind:src="user.picture.large" ></div>
                     <div class="info">
                         <h3>{{user.name.first}} {{user.name.last}}</h3>
@@ -51,13 +51,15 @@
                             </div>
                     </div>
                     <div class="show-user">
-                        <div v-on:click="User_Roll = !User_Roll" class="button-green-user"><i class="fas fa-arrow-right"></i></div>
+                        <div v-on:click="ShowUser(user)" class="button-green-user"><i class="fas fa-arrow-right"></i></div>
                     </div>
                 </div>
             </div>
-            <div v-show="!User_Roll">
-                <ShowUser enter-active-class="animate__fadeInUp"/>
+            <transition enter-active-class="animate__rubberBand">
+                <div class="animate__animated animate__fadeInUp" v-show="!User_Roll">
+                <ShowUser @ShowUserRoll="UserRoll" v-bind:userDetails="userDetails" />
             </div>
+            </transition>
             <div class="container-4">
                 <div class="dowload">
                     <div class="button-purple"><i class="fas fa-download"></i> Download Results</div>
@@ -74,6 +76,7 @@
 <script>
 import ShowUser from '../ShowUser.vue';
 import axios from 'axios';
+// import 'animate.css';
 
 export default {
     name: 'Users',
@@ -91,10 +94,21 @@ export default {
         return{
             User_Roll: true,
             users: [],
+            userDetails: {}
+        }
+    },
+    methods:{
+        ShowUser(user){
+            this.User_Roll = false
+            this.userDetails = user;
+        },
+        UserRoll(){
+            this.User_Roll = true;
+            // this.User_Roll = false
         }
     },
     mounted(){
-            axios.get('https://randomuser.me/api/1.3/?results=3&gender=female')
+            axios.get('https://randomuser.me/api/1.3/?results=3')
             .then(res => this.users = res.data.results)
             // .catch(error = console.log(error));
         }

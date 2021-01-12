@@ -1,12 +1,12 @@
 <template>
     <div v-show="Hide" class="wrapper">
         <div>
-            <div v-on:click="Hide = !Hide" class="button-green-show"><i class="fas fa-arrow-left"></i><span>  RESULTS</span></div>
+            <div @click="HideComp"  class="button-green-show"><i class="fas fa-arrow-left"></i><span style="cursor: pointer;">  RESULTS</span></div>
         </div>
                 <div class="container-1">
                     <div class="image"><img src="@/assets/check.jpg" ></div>
                     <div class="info">
-                        <h3>Chris Miracle <span style="font-weight: lighter;">23</span></h3>
+                        <h3>{{ userDetails.name }}<span style="font-weight: lighter;">23</span></h3>
                         <i><p>No 5 Okoro Street Off 57 Immaculate.</p></i>
                     <!-- <div class="row"> -->
                         <div class="container-3">
@@ -48,14 +48,21 @@
 <script>
 export default {
     name: 'ShowUser',
-    props:[
-        "User_Roll"
-    ],
+    props:{
+        User_Roll: Boolean,
+        userDetails : {}
+    },
     data(){
         return{
             Hide: true,
         }
     },
+    methods:{
+        HideComp(){
+            this.Hide = false;
+            this.$emit('ShowUserRoll');
+        }
+    }
 }
 </script>
 
