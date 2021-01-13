@@ -27,17 +27,17 @@ Still working on writing the testing, getting to many errors.
 ```
  - Client Framework
  Vue Js
- - Depencies Installed and Used
+ - Dependencies Installed and Used
  Animate.css 
  Axios
  Json2csv
  vuejs-paginator
   
-  -Depencies Installed not Used
- - Bootstrap
- - Bootstrap-vue
- - jquery
- - vue-router
+ - Dependencies Installed not Used
+ Bootstrap
+ Bootstrap-vue
+ jquery
+ vue-router
 ```
 
 ### Additional Information
