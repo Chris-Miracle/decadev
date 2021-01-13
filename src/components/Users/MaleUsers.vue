@@ -98,6 +98,10 @@ export default {
         ShowUser(user){
             this.User_Roll = false
             this.userDetails = user;
+            this.userDetails.id = this.userDetails.name.title + "  " + this.userDetails.name.first + "  " + this.userDetails.name.last
+            this.userDetails.home = this.userDetails.location.street.number + "  " + this.userDetails.location.city + "  " + this.userDetails.location.state
+            this.userDetails.image = this.userDetails.picture.large
+            console.log(this.userDetails)
         },
         UserRoll(){
             this.User_Roll = true;

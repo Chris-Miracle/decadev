@@ -94,7 +94,7 @@ export default {
         return{
             User_Roll: true,
             users: [],
-            userDetails: [],
+            userDetails: {},
             pageNumber: 0,
             keyword: "",
         }
@@ -103,6 +103,10 @@ export default {
         ShowUser(user){
             this.User_Roll = false
             this.userDetails = user;
+            this.userDetails.id = this.userDetails.name.title + "  " + this.userDetails.name.first + "  " + this.userDetails.name.last
+            this.userDetails.home = this.userDetails.location.street.number + "  " + this.userDetails.location.city + "  " + this.userDetails.location.state
+            this.userDetails.image = this.userDetails.picture.large
+            console.log(this.userDetails)
         },
         UserRoll(){
             this.User_Roll = true;
@@ -116,7 +120,7 @@ export default {
         }
     },
     mounted(){
-            axios.get('https://randomuser.me/api/1.3/?results=3', 
+            axios.get('https://randomuser.me/api/?page=3&results=3&seed=abc', 
             )
             .then(res => this.users = res.data.results)
             // .catch(error = console.log(error));

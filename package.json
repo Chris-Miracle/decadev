@@ -18,7 +18,8 @@
     "json2csv": "^5.0.5",
     "popper.js": "^1.16.1",
     "vue": "^3.0.0",
-    "vue-router": "^4.0.0-0"
+    "vue-router": "^4.0.0-0",
+    "vuejs-paginator": "^2.0.2"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.12.11",

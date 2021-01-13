@@ -4,10 +4,10 @@
             <div @click="HideComp"  class="button-green-show"><i class="fas fa-arrow-left"></i><span style="cursor: pointer;">  RESULTS</span></div>
         </div>
                 <div class="container-1">
-                    <div class="image"><img src="@/assets/check.jpg" ></div>
+                    <div class="image"><img v-bind:src="userDetails.image" ></div>
                     <div class="info">
-                        <h3>{{ userDetails.name }}<span style="font-weight: lighter;">23</span></h3>
-                        <i><p>No 5 Okoro Street Off 57 Immaculate.</p></i>
+                        <h3>{{ userDetails.id }}<span style="font-weight: lighter;">  23</span></h3>
+                        <i><p> {{ userDetails.home }}</p></i>
                     <!-- <div class="row"> -->
                         <div class="container-3">
                             <div class="email">
