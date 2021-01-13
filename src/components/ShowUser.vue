@@ -13,7 +13,7 @@
                             <div class="email">
                                 <span><i class="fas fa-envelope" ></i></span>
                                 <div class="content">
-                                    <small>chrisstarkmira15@gmail.com</small>
+                                    <small>{{userDetails.email}}</small>
                                 </div>
                             </div>
                             <div class="date">
@@ -25,13 +25,13 @@
                             <div class="phone">
                                 <span><i class="fas fa-phone-volume"></i></span>
                                 <div class="content">
-                                    <small> 0903857937</small>
+                                    <small> {{userDetails.phone}}</small>
                                 </div>
                             </div>
                             <div class="phone">
                                 <span><i class="fas fa-mobile"></i></span>
                                 <div class="content">
-                                    <small> 0903857937</small>
+                                    <small> {{userDetails.cell}}</small>
                                 </div>
                             </div>
                         </div>

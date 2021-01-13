@@ -6,10 +6,10 @@
             <div class="container">
                 <div class="search-box">
                     <div class="search">
-                        <a class="search-btn" href="#" >
+                        <a class="search-btn" @click.prevent="checkName" href="#" >
                             <i class="fas fa-search"></i>
                         </a>
-                        <input  class="search-txt" type="text" name="" placeholder="Find in list">
+                        <input  class="search-txt" v-model="keyword" type="text" id="name" placeholder="Find in list">
                     </div>
                 </div>
                 <div class="dropdown">
@@ -80,16 +80,18 @@ export default {
         ShowUser,
         
     },
-    props:[
-    "Allusers",
-    "Maleusers",
-    "Femaleusers",
-    ],
+    props:{
+    Allusers: undefined,
+    Maleusers: undefined,
+    Femaleusers: undefined
+    },
     data(){
         return{
             User_Roll: true,
             users: [],
-            userDetails: {}
+            userDetails: [],
+            pageNumber: 0,
+            keyword: "",
         }
     },
     methods:{
@@ -100,6 +102,12 @@ export default {
         UserRoll(){
             this.User_Roll = true;
             // this.User_Roll = false
+        },
+        checkName(){
+            console.log(`checking: ${this.keyword}`);
+            axios.get('https://randomuser.me/api/1.3/?results=3', 
+            { params : {search: this.keyword}
+            }).then(res => this.users = res.data.results)
         }
     },
     mounted(){
