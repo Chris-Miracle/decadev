@@ -15,7 +15,7 @@ npm run lint
 
 ### Link to the Web Application
 ```
-https://stupefied-mccarthy-0124b9.netlify.app/
+https://finduser.netlify.app/
 ```
 
 ### Testing & Unit Testing
@@ -41,7 +41,7 @@ Still working on writing the testing, getting to many errors.
 ```
 
 ### Additional Information
-Building this Dashboard was quite challenging, but nonetheless i was able to come up with this https://stupefied-mccarthy-0124b9.netlify.app/ 
+Building this Dashboard was quite challenging, but nonetheless i was able to come up with this https://finduser.netlify.app/ 
 
 I implemented the local search, but it displays the result in the console. Since the Api doesn't support it. it doesn't display any good information. But works flawlessly when tried with some other APIs.
 
